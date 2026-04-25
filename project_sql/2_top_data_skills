@@ -1,0 +1,30 @@
+/*
+-- TOP skills for 
+TOP 10 paying Data Analyst remote jobs
+*/
+
+WITH top_jobs AS
+(SELECT 
+    job_id,
+    name AS company,
+    job_title_short,
+    salary_year_avg
+FROM 
+    job_postings_fact 
+JOIN company_dim ON company_dim.company_id = job_postings_fact.company_id
+WHERE 
+    job_title_short = 'Data Analyst' AND
+    job_location = 'Anywhere'AND 
+    salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+LIMIT 10) 
+
+SELECT 
+    top_jobs.*,
+    skills
+FROM top_jobs
+JOIN skills_job_dim ON skills_job_dim.job_id = top_jobs.job_id
+JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+ORDER BY 
+    salary_year_avg DESC

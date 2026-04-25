@@ -1,0 +1,27 @@
+/*
+-- TOP skills based on salary for 
+Data Analyst remote jobs with atleast 100 jobs
+*/
+
+WITH jbs AS (
+SELECT
+    skills,
+    ROUND(AVG(salary_year_avg),0) AS avg_salary,
+    COUNT(job_postings_fact.job_id) AS demand_count
+FROM job_postings_fact
+JOIN company_dim ON company_dim.company_id = job_postings_fact.company_id
+JOIN skills_job_dim ON skills_job_dim.job_id = job_postings_fact.job_id
+JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+WHERE 
+    job_title_short = 'Data Analyst' AND 
+    job_location = 'Anywhere' AND
+    salary_year_avg IS NOT NULL
+GROUP BY 
+    skills
+ORDER BY 
+    avg_salary DESC)
+
+SELECT*
+FROM jbs
+WHERE 
+    demand_count>100
