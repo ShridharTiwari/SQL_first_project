@@ -1,8 +1,8 @@
-# 📊 SQL Job Postings Analysis
+#  SQL Job Postings Analysis
 
 A SQL-based data analysis project exploring the data analyst job market — covering top-paying roles, in-demand skills, and the highest-compensating skill sets for remote Data Analyst positions.
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 ├── sql.fls/
@@ -30,7 +30,7 @@ The project uses a PostgreSQL database (`sql_course`) with four tables:
 | `skills_dim` | Skill names and categories |
 | `skills_job_dim` | Junction table linking jobs to required skills |
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Create the Database
 
@@ -55,11 +55,11 @@ Follow the instructions in `sql.fls/3_modify_tables.sql`. Due to permission cons
 
 Execute the queries in `project_sql/` in order to explore the job market insights.
 
-## 🔍 Analysis Overview
+##  Analysis Overview
 
 See the [`project_sql/` README](project_sql/README.md) for a detailed breakdown of each query and its findings.
 
-## 🛠️ Tools Used
+##  Tools Used
 
 - **PostgreSQL** — Database engine
 - **pgAdmin** — GUI for database management
