@@ -1,4 +1,4 @@
-# 🔎 project_sql — Data Analyst Job Market Analysis
+#  project_sql — Data Analyst Job Market Analysis
 
 This folder contains four SQL queries that progressively explore the remote Data Analyst job market, from identifying the best-paying roles to pinpointing the most valuable skills.
 
