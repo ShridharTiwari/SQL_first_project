@@ -19,7 +19,7 @@ A SQL-based data analysis project exploring the data analyst job market — cove
 └── README.md
 ```
 
-## 🗄️ Database Schema
+##  Database Schema
 
 The project uses a PostgreSQL database (`sql_course`) with four tables:
 
